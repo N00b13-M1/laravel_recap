@@ -15,7 +15,9 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        //
+        $testimonials =  Testimonial::all();
+        // dd($testimonials);
+        return view ('back.pages.testimonials.all', compact('testimonials'));
     }
 
     /**

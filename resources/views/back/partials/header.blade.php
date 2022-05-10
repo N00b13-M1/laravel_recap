@@ -14,8 +14,8 @@
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                         <li class="scroll-to-section"><a href="{{ route('banner.index') }}">Banner</a></li>
-                        <li class="scroll-to-section"><a href="#about">Services</a></li>
-                        <li class="scroll-to-section"><a href="#pricing">Testimonial</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('services.index') }}">Services</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('testimonials.index') }}">Testimonials</a></li>
 
                         <li>
                             <div class="gradient-button"><a id="modal_trigger" href="/"><i

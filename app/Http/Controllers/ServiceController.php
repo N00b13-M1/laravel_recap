@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
 use App\Models\Service;
+use Symfony\Component\HttpFoundation\Request;
 
 class ServiceController extends Controller
 {
@@ -15,7 +16,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $services =  Service::all();
+        // dd($services);
+        return view ('back.pages.services.all', compact('services'));
     }
 
     /**
@@ -25,7 +28,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.pages.services.create');
     }
 
     /**
@@ -34,9 +37,14 @@ class ServiceController extends Controller
      * @param  \App\Http\Requests\StoreServiceRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreServiceRequest $request)
+    public function store(Request $request)
     {
-        //
+        $service = new Service;
+        $service->title = $request->title;
+        $service->description = $request->description;
+        $service->href_link = $request->href_link;
+        $service->href_text = $request->href_text;
+        $service->href_logo = $request->href_logo;
     }
 
     /**
@@ -47,7 +55,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        return view('back.pages.services.show', compact('service'));
     }
 
     /**

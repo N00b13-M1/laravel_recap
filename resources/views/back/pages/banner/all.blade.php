@@ -1,7 +1,7 @@
 @extends('back.layouts.app')
 @section('content')
     @include('back.partials.header')
-    <div class="container test">
+    <div class="container">
         <h1 class="text-center services fs-1">Banner</h1>
         @if (session()->has('success'))
         <div class="alert alert-success">
@@ -17,10 +17,10 @@
         @error('refused')
             <div class='alert alert-danger'>{{  $message }}</div>
         @enderror
-        <table class="table test">
+        <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Title</th>
                     <th scope="col">P</th>
                     <th scope="col">Quotelink1</th>
