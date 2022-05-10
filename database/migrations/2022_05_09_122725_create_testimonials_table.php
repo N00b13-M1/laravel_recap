@@ -15,7 +15,14 @@ return new class extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('poster_name_big');
+            $table->string('date');
+            $table->string('category');
+            $table->float('rating')->range(0, 5);
+            $table->string('quote');
+            $table->string('headshot');
+            $table->string('poster_name_small');
+            $table->string('poster_title');
             $table->timestamps();
         });
     }

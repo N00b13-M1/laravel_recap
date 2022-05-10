@@ -31,7 +31,7 @@ class ServiceSeeder extends Seeder
         ]);
         DB::table('services')->insert([
             'title' => 'Multi Workflow Idea',
-            'description' => 'If this template is beneficial for your work, please support us',
+            'description' => 'If this template is beneficial for your work, please support us little via PayPal. Thank you.',
             'href_link' => '#',
             'href_text' => 'Read More',
             'href_logo' => 'fa fa-arrow-right'
