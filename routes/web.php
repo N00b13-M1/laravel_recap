@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\BannerController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +21,12 @@ Route::get('/', function () {
 });
 
 Route::get('/back', function () {
-    $hi = "test";
-    return view('back.pages.back', compact('hi'));
+    return view('back.pages.back');
 });
+
+Route::get("/back/banner", [BannerController::class, 'index' ])->name('banner.index');
+Route::get("/back/banner/{id}/edit", [BannerController::class, 'edit' ])->name('banner.edit');
+Route::get("/back/banner/{id}/update", [BannerController::class, 'update' ])->name('banner.update');
 
 
 Auth::routes();

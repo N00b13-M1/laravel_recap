@@ -15,8 +15,9 @@ class BannerController extends Controller
      */
     public function index()
     {
-        $banner =  Banner::all();
-        return view 
+        $banner =  Banner::first();
+        // dd($banner);
+        return view ('back.pages.banner.all', compact('banner'));
     }
 
     /**
@@ -57,9 +58,10 @@ class BannerController extends Controller
      * @param  \App\Models\Banner  $banner
      * @return \Illuminate\Http\Response
      */
-    public function edit(Banner $banner)
+    public function edit( $id )
     {
-        //
+        $banner= Banner::find($id);
+        return view('back.pages.banner.edit', compact('banner'));
     }
 
     /**
@@ -71,7 +73,7 @@ class BannerController extends Controller
      */
     public function update(UpdateBannerRequest $request, Banner $banner)
     {
-        //
+
     }
 
     /**

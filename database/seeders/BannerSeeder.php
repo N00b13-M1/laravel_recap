@@ -16,7 +16,7 @@ class BannerSeeder extends Seeder
     public function run()
     {
         DB::table('banners')->insert([
-            'h2' => 'Get The Latest App From App Stores',
+            'title' => 'Get The Latest App From App Stores',
             'p' => 'Chain App Dev is an app landing page HTML5 template based on Bootstrap v5.1.3 CSS
             layout provided by TemplateMo, a great website to download free CSS templates.',
             'quotelink1' => '#contact',

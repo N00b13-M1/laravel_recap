@@ -34,6 +34,9 @@ https://templatemo.com/tm-570-chain-app-dev
     <link rel="stylesheet" href="{{ asset('assets/css/templatemo-chain-app-dev.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/animated.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+    <style>
+
+    </style>
 </head>
 
 <body>

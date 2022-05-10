@@ -13,7 +13,7 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="#services">Banner</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('banner.index') }}">Banner</a></li>
                         <li class="scroll-to-section"><a href="#about">Services</a></li>
                         <li class="scroll-to-section"><a href="#pricing">Testimonial</a></li>
 
