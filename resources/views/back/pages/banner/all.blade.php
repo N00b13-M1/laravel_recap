@@ -48,6 +48,7 @@
                         <td>{{ $banner->image }}</td>
                         <td>
                             <a href="{{ route('banner.edit', $banner->id) }}">Edit</a>
+                            {{-- {{ $banner->id }} --}}
                         </td>
                     </tr>
                 <a href="{{ route("banner.index") }}">Confirm testimonials</a>

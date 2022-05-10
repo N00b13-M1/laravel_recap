@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBannerRequest;
 use App\Http\Requests\UpdateBannerRequest;
 use App\Models\Banner;
+use Symfony\Component\HttpFoundation\Request;
 
 class BannerController extends Controller
 {
@@ -60,8 +61,8 @@ class BannerController extends Controller
      */
     public function edit( $id )
     {
-        $banner= Banner::find($id);
-        return view('back.pages.banner.edit', compact('banner'));
+        $bannerEdit = Banner::find($id);
+        return view('back.pages.banner.edit', compact('bannerEdit'));
     }
 
     /**
@@ -71,10 +72,23 @@ class BannerController extends Controller
      * @param  \App\Models\Banner  $banner
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBannerRequest $request, Banner $banner)
+    public function update(Request $request, $id)
     {
+        $bannerEdit = Banner::find($id);
+        $bannerEdit->title = $request->title;
+        $bannerEdit->p = $request->p;
+        $bannerEdit->quotelink1 = $request->quotelink1;
+        $bannerEdit->quotetext1 = $request->quotetext1;
+        $bannerEdit->quotelogo1 = $request->quotelogo1;
+        $bannerEdit->quotelink2 = $request->quotelink2;
+        $bannerEdit->quotetext2 = $request->quotetext2;
+        $bannerEdit->quotelogo2 = $request->quotelogo2;
+        $bannerEdit->image = $request->image;
+        $bannerEdit->save();
+        return redirect()->action([BannerController::class, 'index']);
 
     }
+
 
     /**
      * Remove the specified resource from storage.

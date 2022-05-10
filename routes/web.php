@@ -26,7 +26,7 @@ Route::get('/back', function () {
 
 Route::get("/back/banner", [BannerController::class, 'index' ])->name('banner.index');
 Route::get("/back/banner/{id}/edit", [BannerController::class, 'edit' ])->name('banner.edit');
-Route::get("/back/banner/{id}/update", [BannerController::class, 'update' ])->name('banner.update');
+Route::post("/back/banner/{id}/update", [BannerController::class, 'update' ])->name('banner.update');
 
 
 Auth::routes();
