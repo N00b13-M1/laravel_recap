@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description');
+            $table->string('href_link');
+            $table->string('href_text');
+            $table->string('href_logo');
             $table->timestamps();
         });
     }

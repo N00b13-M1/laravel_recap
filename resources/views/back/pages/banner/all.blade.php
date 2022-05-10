@@ -1,7 +1,7 @@
 @extends('back.layouts.app')
 @section('content')
     @include('back.partials.header')
-    <div class="container">
+    <div class="container test">
         <h1 class="text-center services fs-1">Banner</h1>
         @if (session()->has('success'))
         <div class="alert alert-success">
@@ -51,7 +51,6 @@
                             {{-- {{ $banner->id }} --}}
                         </td>
                     </tr>
-                <a href="{{ route("banner.index") }}">Confirm testimonials</a>
             </tbody>
         </table>
     </div>

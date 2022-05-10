@@ -28,7 +28,11 @@ Route::get("/back/banner", [BannerController::class, 'index' ])->name('banner.in
 Route::get("/back/banner/{id}/edit", [BannerController::class, 'edit' ])->name('banner.edit');
 Route::post("/back/banner/{id}/update", [BannerController::class, 'update' ])->name('banner.update');
 
+// Route::resource('back/testimonials');
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

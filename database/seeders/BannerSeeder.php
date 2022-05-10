@@ -25,7 +25,6 @@ class BannerSeeder extends Seeder
             'quotetext2' => 'Free Quote ',
             'quotelogo2' => 'fab fa-google-play',
             'image' => 'assets/images/slider-dec.png'
-
         ]);
     }
 }

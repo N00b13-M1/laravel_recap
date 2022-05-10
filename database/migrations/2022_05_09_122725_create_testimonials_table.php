@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
+            
             $table->timestamps();
         });
     }
@@ -27,5 +28,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('testimonials');
+
     }
 };
