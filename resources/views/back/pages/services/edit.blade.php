@@ -2,7 +2,7 @@
 @section('content')
     @include('back.partials.header')
     <div class="container">
-        <h1 class="text-center services fs-1">In-detail Service </h1>
+        <h1 class="text-center services fs-1">Edit Service </h1>
         <form action="{{ route("services.update", $service) }}" method="post">
             @csrf
             @method('put')

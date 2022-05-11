@@ -1,0 +1,42 @@
+@extends('back.layouts.app')
+@section('content')
+    <div class="container">
+        <h1 class="text-center py-4">Create Testimonial</h1>
+        <form action="{{ route("testimonials.store") }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="mb-3">
+                <label for="poster_name_big" class="form-label">Poster Name Big</label>
+                <input type="text" class="form-control" id="poster_name_big" name="poster_name_big">
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="text" class="form-control" id="date" name="date">
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <input type="text" class="form-control" id="category" name="category">
+            </div>
+            <div class="mb-3">
+                <label for="rating" class="form-label">Rating</label>
+                <input type="number" class="form-control" id="rating" name="rating">
+            </div>
+            <div class="mb-3">
+                <label for="quote" class="form-label">Quote</label>
+                <input type="text" class="form-control" id="quote" name="quote">
+            </div>
+            <div class="mb-3">
+                <label for="headshot" class="form-label">Headshot</label>
+                <input type="file" class="form-control" id="headshot" name="headshot">
+            </div>
+            <div class="mb-3">
+                <label for="poster_name_small" class="form-label">Poster Name Small</label>
+                <input type="text" class="form-control" id="poster_name_small" name="poster_name_small">
+            </div>
+            <div class="mb-3">
+                <label for="poster_title" class="form-label">Poster Title</label>
+                <input type="text" class="form-control" id="poster_title" name="poster_title">
+            </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+@endsection

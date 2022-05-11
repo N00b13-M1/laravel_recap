@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTestimonialRequest;
 use App\Http\Requests\UpdateTestimonialRequest;
 use App\Models\Testimonial;
+use Symfony\Component\HttpFoundation\Request;
 
 class TestimonialController extends Controller
 {
@@ -27,7 +28,7 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.pages.testimonials.create');
     }
 
     /**
@@ -36,9 +37,21 @@ class TestimonialController extends Controller
      * @param  \App\Http\Requests\StoreTestimonialRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTestimonialRequest $request)
+    public function store(Request $request)
     {
-        //
+        $testimonial = new Testimonial;
+        $testimonial->poster_name_big = $request->poster_name_big;
+        $testimonial->date = $request->date;
+        $testimonial->category = $request->category;
+        $testimonial->rating = $request->rating;
+        $testimonial->quote = $request->quote;
+        $testimonial->headshot = $request->file('headshot')->hashName();
+        $testimonial->poster_name_small = $request->poster_name_small;
+        $testimonial->poster_title = $request->poster_title;
+
+        $testimonial->save();
+        $request->file('headshot')->storePublicly('assets/images', 'public');
+        return redirect()->route('testimonials.index');
     }
 
     /**
@@ -49,7 +62,7 @@ class TestimonialController extends Controller
      */
     public function show(Testimonial $testimonial)
     {
-        //
+        return view('back.pages.testimonials.show', compact('testimonial'));
     }
 
     /**
@@ -60,7 +73,7 @@ class TestimonialController extends Controller
      */
     public function edit(Testimonial $testimonial)
     {
-        //
+        return view('back.pages.testimonials.edit', compact('testimonial'));
     }
 
     /**
@@ -70,9 +83,19 @@ class TestimonialController extends Controller
      * @param  \App\Models\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTestimonialRequest $request, Testimonial $testimonial)
+    public function update(Request $request, Testimonial $testimonial)
     {
-        //
+        $testimonial->poster_name_big = $request->poster_name_big;
+        $testimonial->date = $request->date;
+        $testimonial->category = $request->category;
+        $testimonial->rating = $request->rating;
+        $testimonial->quote = $request->quote;
+        $testimonial->headshot = $request->headshot;
+        $testimonial->poster_name_small = $request->poster_name_small;
+        $testimonial->poster_title = $request->poster_title;
+
+        $testimonial->save();
+        return redirect()->route('testimonials.index');
     }
 
     /**
@@ -83,6 +106,7 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
-        //
+        $testimonial->delete();
+        return redirect()->route('testimonials.index', compact('testimonial'));
     }
 }
