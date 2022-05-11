@@ -6,23 +6,23 @@
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ $service->title }}">
+                <input type="text" class="form-control" id="title" name="title">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <input type="text" class="form-control" id="description" name="description" value="{{ $service->description }}">
+                <input type="text" class="form-control" id="description" name="description">
             </div>
             <div class="mb-3">
                 <label for="href_link" class="form-label">HREF Link</label>
-                <input type="text" class="form-control" id="href_link" name="href_link" value="{{ $service->href_link }}">
+                <input type="text" class="form-control" id="href_link" name="href_link">
             </div>
             <div class="mb-3">
                 <label for="href_text" class="form-label">HREF Text</label>
-                <input type="text" class="form-control" id="href_text" name="href_text" value="{{ $service->href_text }}">
+                <input type="text" class="form-control" id="href_text" name="href_text">
             </div>
             <div class="mb-3">
-                <label for="href_text" class="form-label">HREF Text</label>
-                <input type="text" class="form-control" id="href_text" name="href_text" value="{{ $service->href_logo }}">
+                <label for="href_logo" class="form-label">HREF Logo</label>
+                <input type="text" class="form-control" id="href_logo" name="href_logo">
             </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         </form>

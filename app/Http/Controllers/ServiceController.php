@@ -49,7 +49,7 @@ class ServiceController extends Controller
         $service->href_logo = $request->href_logo;
 
         $service->save();
-        return redirect()->route('services.index', compact('service'));
+        return redirect()->route('services.index');
     }
 
     /**

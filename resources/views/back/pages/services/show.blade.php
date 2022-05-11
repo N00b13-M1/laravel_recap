@@ -22,8 +22,8 @@
                 <input type="text" class="form-control" id="href_text" name="href_text" value="{{ $service->href_text }}" readonly>
             </div>
             <div class="mb-3">
-                <label for="href_text" class="form-label">HREF Text</label>
-                <input type="text" class="form-control" id="href_text" name="href_text" value="{{ $service->href_logo }}" readonly>
+                <label for="href_text" class="form-label">HREF Logo</label>
+                <input type="text" class="form-control" id="href_logo" name="href_logo" value="{{ $service->href_logo }}" readonly>
             </div>
             <button type="submit" class="btn btn-primary m-2">Return</button>
         </form>

@@ -3,8 +3,9 @@
     @include('back.partials.header')
     <div class="container">
         <h1 class="text-center services fs-1">In-detail Service </h1>
-        <form action="{{ route("services.index") }}" method="post">
+        <form action="{{ route("services.update", $service) }}" method="post">
             @csrf
+            @method('put')
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" id="title" name="title" value="{{ $service->title }}">
@@ -22,10 +23,10 @@
                 <input type="text" class="form-control" id="href_text" name="href_text" value="{{ $service->href_text }}">
             </div>
             <div class="mb-3">
-                <label for="href_text" class="form-label">HREF Text</label>
-                <input type="text" class="form-control" id="href_text" name="href_text" value="{{ $service->href_logo }}">
+                <label for="href_logo" class="form-label">HREF Logo</label>
+                <input type="text" class="form-control" id="href_logo" name="href_logo" value="{{ $service->href_logo }}">
             </div>
-            <button type="submit" class="btn btn-primary m-2">Submit</button>
+            <button type="submit" class="btn btn-primary m-2">Update</button>
         </form>
     </div>
 @endsection
