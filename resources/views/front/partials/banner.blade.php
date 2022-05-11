@@ -8,17 +8,17 @@
                             data-wow-delay="1s">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h2>Get The Latest App From App Stores</h2>
-                                    <p>Chain App Dev is an app landing page HTML5 template based on Bootstrap v5.1.3 CSS
-                                        layout provided by TemplateMo, a great website to download free CSS templates.
+                                    <h2>{{ $banner->title }}</h2>
+                                    <p>
+                                        {{ $banner->p }}
                                     </p>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="white-button first-button scroll-to-section">
-                                        <a href="#contact">Free Quote <i class="fab fa-apple"></i></a>
+                                        <a href="{{ $banner->quotelink1 }}">{{ $banner->quotetext1 }} <i class="{{ $banner->quotelogo1 }}"></i></a>
                                     </div>
                                     <div class="white-button scroll-to-section">
-                                        <a href="#contact">Free Quote <i class="fab fa-google-play"></i></a>
+                                        <a href="{{ $banner->quotelink2 }}">{{ $banner->quotetext2 }} <i class="{{ $banner->quotelogo2 }}"></i></a>
                                     </div>
                                 </div>
                             </div>

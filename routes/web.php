@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
@@ -18,9 +19,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('front');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/back', function () {
     return view('back.pages.back');

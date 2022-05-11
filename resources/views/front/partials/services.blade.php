@@ -15,7 +15,19 @@
     </div>
     <div class="container">
         <div class="row">
+            @for ($i = 0; $i < 4; $i++)
             <div class="col-lg-3">
+                <div class="service-item {{ $icons[$i] }}-service">
+                    <div class="icon"></div>
+                    <h4>{{ $services[$i]->title }}</h4>
+                    <p>{{ $services[$i]->description }}</p>
+                    <div class="text-button">
+                        <a href="{{ $services[$i]->link }}">{{ $services[$i]->text }} <i class="{{ $services[$i]->logo }}"></i></a>
+                    </div>
+                </div>
+            </div>
+            @endfor
+            {{-- <div class="col-lg-3">
                 <div class="service-item first-service">
                     <div class="icon"></div>
                     <h4>App Maintenance</h4>
@@ -57,7 +69,7 @@
                         <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

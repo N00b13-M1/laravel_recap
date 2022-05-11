@@ -21,6 +21,13 @@ class BannerController extends Controller
         return view ('back.pages.banner.all', compact('banner'));
     }
 
+    public function front()
+    {
+        $banner =  Banner::first();
+        // dd($banner);
+        return view ('front.front', compact('banner'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

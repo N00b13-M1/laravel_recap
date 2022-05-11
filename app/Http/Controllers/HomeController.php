@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
+use App\Models\Service;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,7 +25,12 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
+
     {
-        return view('home');
+        $banner = Banner::first();
+        $services = Service::all();
+        $testimonials = Testimonial::all();
+        $icons = ['first', 'second', 'third', 'fourth'];
+        return view('front.home', compact('banner', 'services', 'testimonials', 'icons'));
     }
 }
