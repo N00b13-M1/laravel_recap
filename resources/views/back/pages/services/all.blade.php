@@ -41,7 +41,7 @@
                         <td>{{ $service->href_text }}</td>
                         <td><i class="{{ $service->href_logo }}"></i></td>
                         <td>
-                            <a href="{{ route("services.show", $service->id) }}"><button class="btn btn-primary">Show</button>
+                            <a href="{{ route("services.show", $service) }}"><button class="btn btn-primary">Show</button>
                             </a>
                         </td>
                     </tr>

@@ -31,6 +31,8 @@ class ServiceController extends Controller
         return view('back.pages.services.create');
     }
 
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -45,6 +47,9 @@ class ServiceController extends Controller
         $service->href_link = $request->href_link;
         $service->href_text = $request->href_text;
         $service->href_logo = $request->href_logo;
+
+        $service->save();
+        return redirect()->route('services.index', compact('service'));
     }
 
     /**
@@ -66,7 +71,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        return view('back.pages.services.edit', compact('service'));
     }
 
     /**
@@ -76,9 +81,16 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateServiceRequest $request, Service $service)
+    public function update(Service $service, Request $request)
     {
-        //
+        $service->title = $request->title;
+        $service->description = $request->description;
+        $service->href_link = $request->href_link;
+        $service->href_text = $request->href_text;
+        $service->href_logo = $request->href_logo;
+
+        $service->save();
+        return redirect()->route('services.index');
     }
 
     /**
@@ -89,6 +101,7 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        $service->delete();
+        return redirect()->route('services.index', compact('service'));
     }
 }
