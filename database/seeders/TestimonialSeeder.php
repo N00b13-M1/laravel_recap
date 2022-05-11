@@ -69,3 +69,4 @@ class TestimonialSeeder extends Seeder
         ]);
     }
 }
+

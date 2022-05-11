@@ -31,6 +31,8 @@ class HomeController extends Controller
         $services = Service::all();
         $testimonials = Testimonial::all();
         $icons = ['first', 'second', 'third', 'fourth'];
-        return view('front.home', compact('banner', 'services', 'testimonials', 'icons'));
+        $testimonial_up = ['first-thumb active','','','',''];
+        $testimonial_down = ['active','','','','last-thumb'];
+        return view('front.home', compact('banner', 'services', 'testimonials', 'icons', 'testimonial_up', 'testimonial_down'));
     }
 }

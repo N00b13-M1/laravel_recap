@@ -15,15 +15,17 @@
                         <div class="row">
                             <div class="col-lg-7 align-self-center">
                                 <div class="menu">
-                                    <div class="first-thumb active">
+                                    @for ($i = 0; $i < 5; $i++)
+                                    <div class="{{ $testimonial_up[$i] }}">
                                         <div class="thumb">
                                             <div class="row">
                                                 <div class="col-lg-4 col-sm-4 col-12">
-                                                    <h4>David Martino Co</h4>
-                                                    <span class="date">30 November 2021</span>
+                                                    {{-- {{ dd($testimonials[4]) }} --}}
+                                                    <h4>{{ $testimonials[$i]->poster_name_big }}</h4>
+                                                    <span class="date">{{ $testimonials[$i]->date }}</span>
                                                 </div>
                                                 <div class="col-lg-4 col-sm-4 d-none d-sm-block">
-                                                    <span class="category">Financial Apps</span>
+                                                    <span class="category">{{ $testimonials[$i]->category }}</span>
                                                 </div>
                                                 <div class="col-lg-4 col-sm-4 col-12">
                                                     <i class="fa fa-star"></i>
@@ -31,12 +33,13 @@
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
-                                                    <span class="rating">4.8</span>
+                                                    <span class="rating">{{ $testimonials[$i]->rating }}</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div>
+                                    @endfor
+                                    {{-- <div>
                                         <div class="thumb">
                                             <div class="row">
                                                 <div class="col-lg-4 col-sm-4 col-12">
@@ -119,37 +122,36 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="col-lg-5">
                                 <ul class="nacc">
-                                    <li class="active">
+                                    @for ($i = 0; $i < 5; $i++)
+                                    <li class="{{ $testimonial_down[$i] }}">
                                         <div>
                                             <div class="thumb">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="client-content">
                                                             <img src="{{ asset('assets/images/quote.png') }}" alt="">
-                                                            <p>“Lorem ipsum dolor sit amet, consectetur adpiscing elit,
-                                                                sed do eismod tempor idunte ut labore et dolore magna
-                                                                aliqua darwin kengan
-                                                                lorem ipsum dolor sit amet, consectetur picing elit
-                                                                massive big blasta.”</p>
-                                                        </div>
-                                                        <div class="down-content">
-                                                            <img src="{{ asset('assets/images/client-image.jpg') }}" alt="">
-                                                            <div class="right-content">
-                                                                <h4>David Martino</h4>
-                                                                <span>CEO of David Company</span>
+                                                            <p>{{ $testimonials[$i]->quote}}</p>
                                                             </div>
+                                                            <div class="down-content">
+                                                                <img src="{{ asset('assets/images/'. $testimonials[$i]->headshot) }}" alt="">
+                                                                <div class="right-content">
+                                                                    <h4>{{ $testimonials[$i]->poser_name_small }}</h4>
+                                                                    <span>{{ $testimonials[$i]->poser_title }}</span>
+                                                                </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    @endfor
+
+                                    {{-- <li>
                                         <div>
                                             <div class="thumb">
                                                 <div class="row">
@@ -248,7 +250,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                         </div>
