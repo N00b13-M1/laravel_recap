@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestimonialController;
@@ -23,7 +24,9 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/back', function () {
     return view('back.pages.back');
-});
+})->name('back');
+
+// Route::get('/back', [LoginController::class, 'login'])->name('back');
 
 // Route::get('login', )
 
@@ -34,8 +37,14 @@ Route::post("/back/banner/{id}/update", [BannerController::class, 'update' ])->n
 Route::resource('back/testimonials', TestimonialController::class);
 Route::resource('back/services', ServiceController::class);
 
-Auth::routes();
+Auth::routes(
+
+);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

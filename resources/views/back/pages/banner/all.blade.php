@@ -1,8 +1,8 @@
 @extends('back.layouts.app')
 @section('content')
     @include('back.partials.header')
-    <div class="container">
-        <h1 class="text-center services fs-1">Banner</h1>
+    <div class="container py-5 my-5">
+        <h1 class="text-center fs-1 py-5">Banner</h1>
         {{-- Alert Testimonial Added --}}
         @if (session()->has('success'))
             <div class="alert alert-success w-50 mx-auto m-3">

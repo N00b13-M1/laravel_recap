@@ -21,6 +21,7 @@ class ServiceSeeder extends Seeder
             'href_link' => '#',
             'href_text' => 'Read More',
             'href_logo' => 'fa fa-arrow-right',
+            'card_logo' => 'service-icon-01.png',
             'created_at' => now()
         ]);
         DB::table('services')->insert([
@@ -29,14 +30,16 @@ class ServiceSeeder extends Seeder
             'href_link' => '#',
             'href_text' => 'Read More',
             'href_logo' => 'fa fa-arrow-right',
+            'card_logo' => 'service-icon-02.png',
             'created_at' => now()
         ]);
         DB::table('services')->insert([
             'title' => 'Multi Workflow Idea',
-            'description' => 'If this template is beneficial for your work, please us (https://paypal.me/templatemo a little via PayPal). Thank you.',
+            'description' => 'If this template is beneficial for your work, please us (https://paypal.me) a little via PayPal, Thank you.',
             'href_link' => '#',
             'href_text' => 'Read More',
             'href_logo' => 'fa fa-arrow-right',
+            'card_logo' => 'service-icon-03.png',
             'created_at' => now()
         ]);
         DB::table('services')->insert([
@@ -46,6 +49,7 @@ class ServiceSeeder extends Seeder
             'href_link' => '#',
             'href_text' => 'Read More',
             'href_logo' => 'fa fa-arrow-right',
+            'card_logo' => 'service-icon-04.png',
             'created_at' => now()
         ]);
 

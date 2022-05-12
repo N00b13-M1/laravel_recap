@@ -46,7 +46,8 @@ class ServiceController extends Controller
 			'description' => 'required',
 			'href_link' => 'required',
 			'href_text' => 'required',
-            'href_logo' => 'required'
+            'href_logo' => 'required',
+            'card_logo' => 'required'
 		]);
 
         $service = new Service;
@@ -55,9 +56,10 @@ class ServiceController extends Controller
         $service->href_link = $request->href_link;
         $service->href_text = $request->href_text;
         $service->href_logo = $request->href_logo;
+        $service->card_logo = $request->card_logo;
 
         $service->save();
-        return redirect()->route('services.index')->with("success", "Successfully added");
+        return redirect()->route('services.index')->with("success", "Successfully added");;
     }
 
     /**
@@ -96,7 +98,8 @@ class ServiceController extends Controller
 			'description' => 'required',
 			'href_link' => 'required',
 			'href_text' => 'required',
-            'href_logo' => 'required'
+            'href_logo' => 'required',
+            'card_logo' => 'required'
 		]);
 
         $service->title = $request->title;
@@ -104,6 +107,7 @@ class ServiceController extends Controller
         $service->href_link = $request->href_link;
         $service->href_text = $request->href_text;
         $service->href_logo = $request->href_logo;
+        $service->card_logo = $request->card_logo;
 
         $service->save();
         return redirect()->route('services.index')->with("update", "Successfully Updated");

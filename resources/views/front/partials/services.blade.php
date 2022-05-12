@@ -18,7 +18,7 @@
             @for ($i = 0; $i < 4; $i++)
             <div class="col-lg-3">
                 <div class="service-item {{ $icons[$i] }}-service">
-                    <div class="icon"></div>
+                    <div class="icon" style="background-image: url('/assets/images/{{ $services[$i]->card_logo }}"></div>
                     <h4>{{ $services[$i]->title }}</h4>
                     <p>{{ $services[$i]->description }}</p>
                     <div class="text-button">

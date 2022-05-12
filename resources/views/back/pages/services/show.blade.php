@@ -25,6 +25,16 @@
                 <label for="href_text" class="form-label">HREF Logo</label>
                 <input type="text" class="form-control" id="href_logo" name="href_logo" value="{{ $service->href_logo }}" readonly>
             </div>
+            <div class="mb-3">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Card Logo
+                <img src="{{ asset('/assets/images/' .$service->card_logo ) }}"
+                            style="width: 50px" alt="" class="m-2 d-block">
+                </label>
+                {{-- <input class="form-check-input" type="radio" name="card_logo"
+                    id="card_logo" checked> --}}
+            </div>
+
             <button type="submit" class="btn btn-primary m-2">Return</button>
         </form>
         <td>

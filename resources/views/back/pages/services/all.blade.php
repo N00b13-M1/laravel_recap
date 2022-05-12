@@ -30,6 +30,7 @@
                     <th scope="col">Link</th>
                     <th scope="col">Text</th>
                     <th scope="col">Logo</th>
+                    <th scope="col">Card Logo</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -44,6 +45,7 @@
                         <td>{{ $service->href_link }}</td>
                         <td>{{ $service->href_text }}</td>
                         <td><i class="{{ $service->href_logo }}"></i></td>
+                        <td><img src="{{ asset('assets/images/' . $service->card_logo) }}"></td>
                         <td>
                             <a href="{{ route('services.show', $service) }}"><button class="btn btn-primary">Show</button>
                             </a>

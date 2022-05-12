@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('href_link');
             $table->string('href_text');
             $table->string('href_logo');
+            $table->string('card_logo');
             $table->timestamps();
         });
     }
