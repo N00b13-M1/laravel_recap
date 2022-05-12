@@ -3,20 +3,24 @@
     @include('back.partials.header')
     <div class="container test">
         <h1 class="text-center services fs-1">Services</h1>
+        {{-- Alert Testimonial Added --}}
         @if (session()->has('success'))
-        <div class="alert alert-success">
-            {{ session()->get('success') }}
-        </div>
-        @endif
-
-        @if (session()->has('error'))
-            <div class="alert alert-danger">
-                {{ session()->get('error') }}
+            <div class="alert alert-success w-50 mx-auto m-3">
+                <p class="text-success">{{ session()->get('success') }}</p>
             </div>
         @endif
-        @error('refused')
-            <div class='alert alert-danger'>{{  $message }}</div>
-        @enderror
+        {{-- Alert Testimonial Updated --}}
+        @if (session()->has('update'))
+            <div class="alert alert-warning w-50 mx-auto m-3>
+                <p class="text-warning">{{ session()->get('update') }}</p>
+            </div>
+        @endif
+        {{-- Alert Testimonial Deleted --}}
+        @if (session()->has('delete'))
+            <div class="alert alert-danger w-50 mx-auto m-3">
+                <p class="text-danger">{{ session()->get('delete') }}</p>
+            </div>
+        @endif
         <table class="table mt-5">
             <thead>
                 <tr>
@@ -30,7 +34,7 @@
                 </tr>
             </thead>
             <tbody>
-                    @foreach ($services as $service)
+                @foreach ($services as $service)
                     {{-- {{ dd($service->id) }} --}}
                     <tr>
                         <th scope="row">{{ $service->id }}</th>
@@ -41,15 +45,15 @@
                         <td>{{ $service->href_text }}</td>
                         <td><i class="{{ $service->href_logo }}"></i></td>
                         <td>
-                            <a href="{{ route("services.show", $service) }}"><button class="btn btn-primary">Show</button>
+                            <a href="{{ route('services.show', $service) }}"><button class="btn btn-primary">Show</button>
                             </a>
                         </td>
                     </tr>
-                    @endforeach
+                @endforeach
             </tbody>
         </table>
         <div class='text-center'>
-            <a href="{{ route("services.create") }}"><button class="btn btn-success bg-success">Create</button></a>
+            <a href="{{ route('services.create') }}"><button class="btn btn-success bg-success">Create</button></a>
         </div>
     </div>
 @endsection

@@ -41,6 +41,14 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+			'title' => 'required',
+			'description' => 'required',
+			'href_link' => 'required',
+			'href_text' => 'required',
+            'href_logo' => 'required'
+		]);
+
         $service = new Service;
         $service->title = $request->title;
         $service->description = $request->description;
@@ -49,7 +57,7 @@ class ServiceController extends Controller
         $service->href_logo = $request->href_logo;
 
         $service->save();
-        return redirect()->route('services.index');
+        return redirect()->route('services.index')->with("success", "Successfully added");
     }
 
     /**
@@ -83,6 +91,14 @@ class ServiceController extends Controller
      */
     public function update(Service $service, Request $request)
     {
+        $validated = $request->validate([
+			'title' => 'required',
+			'description' => 'required',
+			'href_link' => 'required',
+			'href_text' => 'required',
+            'href_logo' => 'required'
+		]);
+
         $service->title = $request->title;
         $service->description = $request->description;
         $service->href_link = $request->href_link;
@@ -90,7 +106,7 @@ class ServiceController extends Controller
         $service->href_logo = $request->href_logo;
 
         $service->save();
-        return redirect()->route('services.index');
+        return redirect()->route('services.index')->with("update", "Successfully Updated");
     }
 
     /**
@@ -102,6 +118,6 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         $service->delete();
-        return redirect()->route('services.index', compact('service'));
+        return redirect()->route('services.index', compact('service'))->with("delete", "Successfully Deleted");
     }
 }

@@ -2,7 +2,16 @@
 @section('content')
     <div class="container">
         <h1 class="text-center py-4">Create Service</h1>
-        <form action="{{ route("services.store") }}" method="POST">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <form action="{{ route('services.store') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
@@ -24,7 +33,7 @@
                 <label for="href_logo" class="form-label">HREF Logo</label>
                 <input type="text" class="form-control" id="href_logo" name="href_logo">
             </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 @endsection

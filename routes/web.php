@@ -19,12 +19,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+// Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/back', function () {
     return view('back.pages.back');
 });
 
+// Route::get('login', )
 
 Route::get("/back/banner", [BannerController::class, 'index' ])->name('banner.index');
 Route::get("/back/banner/{id}/edit", [BannerController::class, 'edit' ])->name('banner.edit');
@@ -35,6 +36,6 @@ Route::resource('back/services', ServiceController::class);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 

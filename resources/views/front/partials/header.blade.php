@@ -18,7 +18,7 @@
                         <li class="scroll-to-section"><a href="#pricing">Pricing</a></li>
                         <li class="scroll-to-section"><a href="#newsletter">Newsletter</a></li>
                         <li>
-                            <div class="gradient-button"><a id="modal_trigger" href="/home"><i
+                            <div class="gradient-button"><a id="modal_trigger" href="/dashboard"><i
                                         class="fa fa-sign-in-alt"></i> Admin</a></div>
                         </li>
                     </ul>

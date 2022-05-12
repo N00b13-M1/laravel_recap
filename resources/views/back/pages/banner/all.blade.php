@@ -3,20 +3,24 @@
     @include('back.partials.header')
     <div class="container">
         <h1 class="text-center services fs-1">Banner</h1>
+        {{-- Alert Testimonial Added --}}
         @if (session()->has('success'))
-        <div class="alert alert-success">
-            {{ session()->get('success') }}
-        </div>
-        @endif
-
-        @if (session()->has('error'))
-            <div class="alert alert-danger">
-                {{ session()->get('error') }}
+            <div class="alert alert-success w-50 mx-auto m-3">
+                <p class="text-success">{{ session()->get('success') }}</p>
             </div>
         @endif
-        @error('refused')
-            <div class='alert alert-danger'>{{  $message }}</div>
-        @enderror
+        {{-- Alert Testimonial Updated --}}
+        @if (session()->has('update'))
+            <div class="alert alert-warning w-50 mx-auto m-3>
+                <p class="text-warning">{{ session()->get('update') }}</p>
+            </div>
+        @endif
+        {{-- Alert Testimonial Deleted --}}
+        @if (session()->has('delete'))
+            <div class="alert alert-danger w-50 mx-auto m-3">
+                <p class="text-danger">{{ session()->get('delete') }}</p>
+            </div>
+        @endif
         <table class="table">
             <thead>
                 <tr>
@@ -34,23 +38,23 @@
                 </tr>
             </thead>
             <tbody>
-                    <tr>
+                <tr>
 
-                        <th scope="row">{{ $banner->id }}</th>
-                        <td>{{ $banner->title }}</td> -
-                        <td>{{ $banner->p }}</td>
-                        <td>{{ $banner->quotelink1 }}</td>
-                        <td>{{ $banner->quotetext1 }}</td>
-                        <td>{{ $banner->quotelogo1 }}</td>
-                        <td>{{ $banner->quotelink2 }}</td>
-                        <td>{{ $banner->quotetext2 }}</td>
-                        <td>{{ $banner->quotelogo2 }}</td>
-                        <td>{{ $banner->image }}</td>
-                        <td>
-                            <a href="{{ route('banner.edit', $banner) }}">Edit</a>
-                            {{-- {{ $banner->id }} --}}
-                        </td>
-                    </tr>
+                    <th scope="row">{{ $banner->id }}</th>
+                    <td>{{ $banner->title }}</td> -
+                    <td>{{ $banner->p }}</td>
+                    <td>{{ $banner->quotelink1 }}</td>
+                    <td>{{ $banner->quotetext1 }}</td>
+                    <td>{{ $banner->quotelogo1 }}</td>
+                    <td>{{ $banner->quotelink2 }}</td>
+                    <td>{{ $banner->quotetext2 }}</td>
+                    <td>{{ $banner->quotelogo2 }}</td>
+                    <td>{{ $banner->image }}</td>
+                    <td>
+                        <a href="{{ route('banner.edit', $banner) }}">Edit</a>
+                        {{-- {{ $banner->id }} --}}
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

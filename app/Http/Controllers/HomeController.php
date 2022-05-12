@@ -35,4 +35,6 @@ class HomeController extends Controller
         $testimonial_down = ['active','','','','last-thumb'];
         return view('front.home', compact('banner', 'services', 'testimonials', 'icons', 'testimonial_up', 'testimonial_down'));
     }
+
+
 }

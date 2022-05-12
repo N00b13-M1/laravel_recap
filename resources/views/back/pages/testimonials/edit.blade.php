@@ -3,6 +3,15 @@
     @include('back.partials.header')
     <div class="container">
         <h1 class="text-center services fs-1">Edit Testimonial </h1>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
         <form action="{{ route("testimonials.update", $testimonial) }}" method="post">
             @csrf
             @method('put')
