@@ -20,21 +20,24 @@ class ServiceSeeder extends Seeder
             'description' => 'You are not allowed to redistribute this template ZIP file on any other website.',
             'href_link' => '#',
             'href_text' => 'Read More',
-            'href_logo' => 'fa fa-arrow-right'
+            'href_logo' => 'fa fa-arrow-right',
+            'created_at' => now()
         ]);
         DB::table('services')->insert([
             'title' => 'Rocket Speed of App',
             'description' => 'You are not allowed to redistribute this template ZIP file on any other website.',
             'href_link' => '#',
             'href_text' => 'Read More',
-            'href_logo' => 'fa fa-arrow-right'
+            'href_logo' => 'fa fa-arrow-right',
+            'created_at' => now()
         ]);
         DB::table('services')->insert([
             'title' => 'Multi Workflow Idea',
-            'description' => 'If this template is beneficial for your work, please support us little via PayPal. Thank you.',
+            'description' => 'If this template is beneficial for your work, please us (https://paypal.me/templatemo a little via PayPal). Thank you.',
             'href_link' => '#',
             'href_text' => 'Read More',
-            'href_logo' => 'fa fa-arrow-right'
+            'href_logo' => 'fa fa-arrow-right',
+            'created_at' => now()
         ]);
         DB::table('services')->insert([
             'title' => '24/7 Help &amp; Support',
@@ -42,7 +45,8 @@ class ServiceSeeder extends Seeder
             axe.',
             'href_link' => '#',
             'href_text' => 'Read More',
-            'href_logo' => 'fa fa-arrow-right'
+            'href_logo' => 'fa fa-arrow-right',
+            'created_at' => now()
         ]);
 
 

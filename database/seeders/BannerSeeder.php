@@ -24,7 +24,8 @@ class BannerSeeder extends Seeder
             'quotelink2' => '#contact',
             'quotetext2' => 'Free Quote ',
             'quotelogo2' => 'fab fa-google-play',
-            'image' => 'assets/images/slider-dec.png'
+            'image' => 'assets/images/slider-dec.png',
+            'created_at' => now()
         ]);
     }
 }

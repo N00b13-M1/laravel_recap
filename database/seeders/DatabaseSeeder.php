@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BannerSeeder::class,
             ServiceSeeder::class,
-            TestimonialSeeder::class
+            TestimonialSeeder::class,
+            RoleSeeder::class
         ]);
 
         // \App\Models\User::factory(10)->create();

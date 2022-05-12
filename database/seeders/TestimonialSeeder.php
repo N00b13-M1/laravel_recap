@@ -20,11 +20,11 @@ class TestimonialSeeder extends Seeder
             "date" => '30 November 2021',
             "category" => 'Financial Apps',
             'rating' => 4.8,
-            'quote' => '“Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan
-            lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”',
+            'quote' => '“Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”',
             'headshot' => 'client-image.jpg',
             'poster_name_small' => 'David Martino',
-            'poster_title' => 'CEO of David Company'
+            'poster_title' => 'CEO of David Company',
+            'created_at' => now()
         ]);
         DB::table('testimonials')->insert([
             "poster_name_big" => 'Jake Harris Nyo',
@@ -34,7 +34,8 @@ class TestimonialSeeder extends Seeder
             'quote' => '“CTO, Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”',
             'headshot' => 'client-image.jpg',
             'poster_name_small' => 'Jake H. Nyo',
-            'poster_title' => 'CTO of Digital Company'
+            'poster_title' => 'CTO of Digital Company',
+            'created_at' => now()
         ]);
         DB::table('testimonials')->insert([
             "poster_name_big" => 'May Catherina',
@@ -44,7 +45,8 @@ class TestimonialSeeder extends Seeder
             'quote' => '“May, Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”',
             'headshot' => "client-image.jpg",
             'poster_name_small' => 'May C.',
-            'poster_title' => 'Founder of Catherina Co.'
+            'poster_title' => 'Founder of Catherina Co.',
+            'created_at' => now()
         ]);
         DB::table('testimonials')->insert([
             "poster_name_big" => 'Random User',
@@ -54,18 +56,19 @@ class TestimonialSeeder extends Seeder
             'quote' => '“Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”',
             'headshot' => 'client-image.jpg',
             'poster_name_small' => 'Random Staff',
-            'poster_title' => 'Manager, Digital Company'
+            'poster_title' => 'Manager, Digital Company',
+            'created_at' => now()
         ]);
         DB::table('testimonials')->insert([
             "poster_name_big" => 'Mark Amber Do',
             "date" => '21 November 2021',
             "category" => 'Web Development',
             'rating' => 4.3,
-            'quote' => '“Mark, Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan
-            lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”',
+            'quote' => '“Mark, Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”',
             'headshot' => "client-image.jpg",
             'poster_name_small' => 'Mark Am',
-            'poster_title' => 'CTO, Amber Do Company'
+            'poster_title' => 'CTO, Amber Do Company',
+            'created_at' => now()
         ]);
     }
 }

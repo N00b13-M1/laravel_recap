@@ -31,10 +31,6 @@
                 <input type="text" class="form-control" id="headshot" name="headshot" value="{{ $testimonial->headshot }}">
             </div>
             <div class="mb-3">
-                <label for="quote" class="form-label">Quote</label>
-                <input type="text" class="form-control" id="quote" name="quote" value="{{ $testimonial->quote }}">
-            </div>
-            <div class="mb-3">
                 <label for="poster_name_small" class="form-label">Poster Name Small</label>
                 <input type="text" class="form-control" id="poster_name_small" name="poster_name_small" value="{{ $testimonial->poster_name_small }}">
             </div>

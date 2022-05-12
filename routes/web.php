@@ -25,13 +25,13 @@ Route::get('/back', function () {
     return view('back.pages.back');
 });
 
+
 Route::get("/back/banner", [BannerController::class, 'index' ])->name('banner.index');
 Route::get("/back/banner/{id}/edit", [BannerController::class, 'edit' ])->name('banner.edit');
 Route::post("/back/banner/{id}/update", [BannerController::class, 'update' ])->name('banner.update');
 
 Route::resource('back/testimonials', TestimonialController::class);
 Route::resource('back/services', ServiceController::class);
-
 
 Auth::routes();
 

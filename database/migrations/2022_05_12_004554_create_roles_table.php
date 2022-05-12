@@ -13,16 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('testimonials', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('poster_name_big');
-            $table->string('date');
-            $table->string('category');
-            $table->float('rating');
-            $table->text('quote');
-            $table->string('headshot');
-            $table->string('poster_name_small');
-            $table->string('poster_title');
+            $table->string('role');
+            $table->foreignId('user_id')->constrained('users', 'id');
             $table->timestamps();
         });
     }
@@ -34,7 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('testimonials');
-
+        Schema::dropIfExists('roles');
     }
 };

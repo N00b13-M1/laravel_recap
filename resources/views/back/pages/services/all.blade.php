@@ -9,9 +9,9 @@
         </div>
         @endif
 
-        @if (session()->has('erreur'))
+        @if (session()->has('error'))
             <div class="alert alert-danger">
-                {{ session()->get('erreur') }}
+                {{ session()->get('error') }}
             </div>
         @endif
         @error('refused')

@@ -9,9 +9,9 @@
         </div>
         @endif
 
-        @if (session()->has('erreur'))
+        @if (session()->has('error'))
             <div class="alert alert-danger">
-                {{ session()->get('erreur') }}
+                {{ session()->get('error') }}
             </div>
         @endif
         @error('refused')
@@ -47,7 +47,7 @@
                         <td>{{ $banner->quotelogo2 }}</td>
                         <td>{{ $banner->image }}</td>
                         <td>
-                            <a href="{{ route('banner.edit', $banner->id) }}">Edit</a>
+                            <a href="{{ route('banner.edit', $banner) }}">Edit</a>
                             {{-- {{ $banner->id }} --}}
                         </td>
                     </tr>
