@@ -18,8 +18,8 @@
                         <li class="scroll-to-section"><a href="{{ route('testimonials.index') }}">Testimonials</a></li>
 
                         <li>
-                            <div class="gradient-button"><a id="modal_trigger" href="/"><i
-                                        class="fa fa-sign-in-alt"></i> Admin</a></div>
+                            <div class="gradient-button"><a id="modal_trigger" href="{{ route('home') }}"><i
+                                        class="fa fa-sign-out-alt"></i> Log Out</a></div>
                         </li>
                     </ul>
                     <a class='menu-trigger'>

@@ -17,27 +17,27 @@
             @method('put')
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ $service->title }}">
+                <input type="text" class="form-control" id="title" name="title" value="{{ old('title') ? old('title') : $service->title }}">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <input type="text" class="form-control" id="description" name="description"
-                    value="{{ $service->description }}">
+                value="{{ old('description') ? old('description') : $service->description }}">
             </div>
             <div class="mb-3">
                 <label for="href_link" class="form-label">HREF Link</label>
                 <input type="text" class="form-control" id="href_link" name="href_link"
-                    value="{{ $service->href_link }}">
+                value="{{ old('href_link') ? old('href_link') : $service->href_link }}">
             </div>
             <div class="mb-3">
                 <label for="href_text" class="form-label">HREF Text</label>
                 <input type="text" class="form-control" id="href_text" name="href_text"
-                    value="{{ $service->href_text }}">
+                value="{{ old('href_text') ? old('href_text') : $service->href_text }}">
             </div>
             <div class="mb-3">
                 <label for="href_logo" class="form-label">HREF Logo</label>
                 <input type="text" class="form-control" id="href_logo" name="href_logo"
-                    value="{{ $service->href_logo }}">
+                value="{{ old('href_logo') ? old('href_logo') : $service->href_logo }}">
             </div>
             <div class="mb-3">
                 <div class='logo-group'>

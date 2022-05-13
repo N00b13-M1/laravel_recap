@@ -39,6 +39,18 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+			'poster_name_big' => 'required',
+			'date' => 'required',
+			'category' => 'required',
+			'rating' => 'required|min:0|max:5',
+            'quote' => 'required',
+            'headshot' => 'required',
+			'poster_name_small' => 'required',
+            'poster_title' => 'required',
+		]);
+
+
         $testimonial = new Testimonial;
         $testimonial->poster_name_big = $request->poster_name_big;
         $testimonial->date = $request->date;
@@ -85,6 +97,17 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, Testimonial $testimonial)
     {
+        $validated = $request->validate([
+			'poster_name_big' => 'required',
+			'date' => 'required',
+			'category' => 'required',
+			'rating' => 'required|min:0|max:5',
+            'quote' => 'required',
+            'headshot' => 'required',
+			'poster_name_small' => 'required',
+            'poster_title' => 'required',
+		]);
+
         $testimonial->poster_name_big = $request->poster_name_big;
         $testimonial->date = $request->date;
         $testimonial->category = $request->category;
