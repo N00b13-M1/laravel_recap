@@ -12,7 +12,7 @@
             </ul>
         </div>
     @endif
-        <form action="{{ route("testimonials.update", $testimonial) }}" method="post">
+        <form action="{{ route("testimonials.update", $testimonial) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('put')
             <div class="mb-3">
@@ -29,7 +29,7 @@
             </div>
             <div class="mb-3">
                 <label for="rating" class="form-label">Rating</label>
-                <input type="number" class="form-control" id="rating" name="rating" value="{{ old('rating') ? old('rating') : $testimonial->rating }}"">
+                <input type="number" class="form-control" min="0" max="5" step="0.1" id="rating" name="rating" value="{{ old('rating') ? old('rating') : $testimonial->rating }}"">
             </div>
             <div class="mb-3">
                 <label for="quote" class="form-label">Quote</label>
@@ -52,3 +52,4 @@
         </form>
     </div>
 @endsection
+

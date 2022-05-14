@@ -7,6 +7,8 @@ use App\Models\Service;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
+
+
 class HomeController extends Controller
 {
     /**
@@ -14,11 +16,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Show the application dashboard.
      *

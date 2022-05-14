@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/login', function () {
     return view('layouts.app');
@@ -30,21 +30,19 @@ Route::get('/login', function () {
 // Route::get('/logout', function () {
 //     return view('home');
 // })->name('logout');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/back', function () {
+        return view('back.pages.back');
+    });
 
-Route::get('/back', function () {
-    return view('back.pages.back');
+    Route::get("/back/banner", [BannerController::class, 'index' ])->name('banner.index');
+    Route::get("/back/banner/{id}/edit", [BannerController::class, 'edit' ])->name('banner.edit');
+    Route::post("/back/banner/{id}/update", [BannerController::class, 'update' ])->name('banner.update');
+
+    Route::resource('back/testimonials', TestimonialController::class);
+    Route::resource('back/services', ServiceController::class);
 });
-
-
-
-Route::get("/back/banner", [BannerController::class, 'index' ])->name('banner.index');
-Route::get("/back/banner/{id}/edit", [BannerController::class, 'edit' ])->name('banner.edit');
-Route::post("/back/banner/{id}/update", [BannerController::class, 'update' ])->name('banner.update');
-
-Route::resource('back/testimonials', TestimonialController::class);
-Route::resource('back/services', ServiceController::class);
 
 Auth::routes();
 
-// Auth::routes();
 

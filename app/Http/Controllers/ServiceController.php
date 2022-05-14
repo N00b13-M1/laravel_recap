@@ -6,6 +6,10 @@ use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
 use App\Models\Service;
 use Symfony\Component\HttpFoundation\Request;
+use Illuminate\Support\Facades\Auth;
+
+
+
 
 class ServiceController extends Controller
 {
@@ -19,6 +23,8 @@ class ServiceController extends Controller
         $services =  Service::all();
         // dd($services);
         return view ('back.pages.services.all', compact('services'));
+
+
     }
 
     /**
@@ -82,6 +88,7 @@ class ServiceController extends Controller
     public function edit(Service $service)
     {
         return view('back.pages.services.edit', compact('service'));
+
     }
 
     /**
@@ -125,3 +132,4 @@ class ServiceController extends Controller
         return redirect()->route('services.index', compact('service'))->with("delete", "Successfully Deleted");
     }
 }
+

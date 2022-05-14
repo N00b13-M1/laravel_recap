@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTestimonialRequest;
 use App\Http\Requests\UpdateTestimonialRequest;
 use App\Models\Testimonial;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\Request;
 
 class TestimonialController extends Controller
@@ -16,6 +18,7 @@ class TestimonialController extends Controller
      */
     public function index()
     {
+        
         $testimonials =  Testimonial::all();
         // dd($testimonials);
         return view ('back.pages.testimonials.all', compact('testimonials'));
@@ -43,7 +46,7 @@ class TestimonialController extends Controller
 			'poster_name_big' => 'required',
 			'date' => 'required',
 			'category' => 'required',
-			'rating' => 'required|min:0|max:5',
+			'rating' => 'required|numeric|min:3|max:5',
             'quote' => 'required',
             'headshot' => 'required',
 			'poster_name_small' => 'required',
@@ -95,13 +98,13 @@ class TestimonialController extends Controller
      * @param  \App\Models\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Testimonial $testimonial)
+    public function update(Request $request , Testimonial $testimonial)
     {
         $validated = $request->validate([
 			'poster_name_big' => 'required',
 			'date' => 'required',
 			'category' => 'required',
-			'rating' => 'required|min:0|max:5',
+			'rating' => 'required|between:3,5',
             'quote' => 'required',
             'headshot' => 'required',
 			'poster_name_small' => 'required',
@@ -113,10 +116,11 @@ class TestimonialController extends Controller
         $testimonial->category = $request->category;
         $testimonial->rating = $request->rating;
         $testimonial->quote = $request->quote;
-        $testimonial->headshot = $request->headshot;
         $testimonial->poster_name_small = $request->poster_name_small;
         $testimonial->poster_title = $request->poster_title;
-
+        Storage::disk('public')->delete('assets/images/' . $testimonial->headshot);
+        $testimonial->headshot = $request->file('headshot')->hashName();
+        $request->file('headshot')->storePublicly('assets/images', 'public');
         $testimonial->save();
         return redirect()->route('testimonials.index');
     }
@@ -129,7 +133,23 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
+        // Storage::delete('assets/images/' . $testimonial->headshot);
+        Storage::disk('public')->delete('assets/images/' . $testimonial->headshot);
         $testimonial->delete();
         return redirect()->route('testimonials.index', compact('testimonial'));
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
