@@ -16,14 +16,15 @@
                         <li class="scroll-to-section"><a href="{{ route('banner.index') }}">Banner</a></li>
                         <li class="scroll-to-section"><a href="{{ route('services.index') }}">Services</a></li>
                         <li class="scroll-to-section"><a href="{{ route('testimonials.index') }}">Testimonials</a></li>
-
                         <li>
                             <div class="gradient-button">
                                 <form action="{{ route('logout') }}" method="post">
                                 @csrf
-                                <button ><i
-                                    class="fa fa-sign-out-alt"></i> Log out </button>
-                            </form>
+                                <button >
+                                    <i class="fa fa-sign-out-alt">Log out</i>
+                                </button>
+                                </form>
+                            </div>
                         </li>
                     </ul>
                     <a class='menu-trigger'>

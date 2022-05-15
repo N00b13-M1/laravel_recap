@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             BannerSeeder::class,
             ServiceSeeder::class,
             TestimonialSeeder::class,
+            NewsletterSeeder::class,
         ]);
 
         // \App\Models\User::factory(10)->create();
