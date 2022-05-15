@@ -7,7 +7,7 @@
                 </div>
             </div>
             <div class="col-lg-6 offset-lg-3">
-                <form id="search" action="#" method="GET">
+                <form id="search" action="" method="post">
                     <div class="row">
                         <div class="col-lg-6 col-sm-6">
                             <fieldset>

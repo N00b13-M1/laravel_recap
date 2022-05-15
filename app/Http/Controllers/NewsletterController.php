@@ -45,7 +45,8 @@ class NewsletterController extends Controller
      */
     public function index()
     {
-
+        $newsletters = Newsletter::all();
+        return view('back.pages.newsletters.all', compact('newsletters'));
     }
 
     /**

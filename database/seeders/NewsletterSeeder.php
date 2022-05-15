@@ -16,7 +16,6 @@ class NewsletterSeeder extends Seeder
     public function run()
     {
         DB::table('newsletters')->insert([
-            "subscriber_email" => '',
         ]);
     }
 }

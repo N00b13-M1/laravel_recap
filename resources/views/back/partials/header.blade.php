@@ -15,7 +15,7 @@
                         <li class="scroll-to-section"><a href="/back" class="active">Home</a></li>
                         <li class="scroll-to-section"><a href="{{ route('banner.index') }}">Banner</a></li>
                         <li class="scroll-to-section"><a href="{{ route('services.index') }}">Services</a></li>
-                        <li class="scroll-to-section"><a href="{{ route('testimonials.index') }}">Testimonials</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('newsletters.index') }}">Newsletter Subscribers</a></li>
                         <li>
                             <div class="gradient-button">
                                 <form action="{{ route('logout') }}" method="post">
